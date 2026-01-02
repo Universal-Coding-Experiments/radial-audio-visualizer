@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>Radial Audio Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="hud-wrapper centered" id="hud-wrapper" aria-hidden="false">
+    <div class="hud compact" id="hud" role="region" aria-label="Visualizer controls">
+      <div class="left">
+        <div class="stat">
+          <div class="label">Visualizer</div>
+          <div class="value">Radial Waveform</div>
+        </div>
+
+        <div class="stat">
+          <div class="label">Points</div>
+          <div class="value" id="hud-points">200</div>
+          <input id="points-slider" type="range" min="40" max="1200" step="10" value="200" aria-label="Points slider">
+        </div>
+
+        <div class="stat">
+          <div class="label">Speed</div>
+          <div class="value" id="hud-speed">0.050</div>
+          <input id="speed-slider" type="range" min="0.005" max="2" step="0.005" value="0.05" aria-label="Speed slider">
+        </div>
+
+        <div class="stat">
+          <div class="label">Center</div>
+          <div class="value" id="hud-center">0.50, 0.50</div>
+          <input id="centerX-slider" type="range" min="0.05" max="0.95" step="0.01" value="0.5" aria-label="Center X slider">
+          <input id="centerY-slider" type="range" min="0.05" max="0.95" step="0.01" value="0.5" aria-label="Center Y slider">
+        </div>
+
+        <div class="stat">
+          <div class="label">Audio Level</div>
+          <div class="value" id="hud-audio">0.00</div>
+        </div>
+      </div>
+
+      <div class="controls" role="toolbar" aria-label="Visualizer actions">
+        <button class="btn small" id="record-btn" type="button" aria-pressed="false">Record 5s</button>
+        <div id="rec-ind" class="record-ind" title="Recording indicator" aria-hidden="true"></div>
+        <button class="btn small" id="reset-btn" type="button">Reset</button>
+        <button class="btn small" id="toggle-hud" type="button" aria-expanded="true">Hide HUD</button>
+        <button class="btn tiny" id="collapse-hud" type="button" aria-pressed="false" title="Collapse HUD">▾</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="audio-row centered" id="audio-row" role="region" aria-label="Audio controls">
+    <label class="btn small" title="Upload audio" for="audio-file" style="cursor:pointer;">
+      Upload
+      <input id="audio-file" type="file" accept="audio/*" style="display:none" aria-hidden="true">
+    </label>
+
+    <div id="audio-player-wrap" class="audio-player" aria-live="polite"></div>
+
+    <label class="muted" for="volume-slider">Vol</label>
+    <input id="volume-slider" class="volume" type="range" min="0" max="100" value="80" aria-label="Volume slider">
+
+    <div id="audio-status" class="muted" aria-live="polite">No audio loaded</div>
+
+    <div class="audio-controls-right">
+      <button class="btn tiny" id="collapse-audio" type="button" aria-pressed="false" title="Collapse Audio">▴</button>
+    </div>
+  </div>
+
+  <!-- Canvas (visualizer) -->
+  <main class="canvas-wrap" role="main">
+    <canvas id="c" aria-hidden="true"></canvas>
+  </main>
+
+  <!-- Hint -->
+  <div class="hint" id="hint" role="note">Tap to pause/resume • Drag to move • Pinch to change density</div>
+
+  <script src="script.js"></script>
+</body>
+
+
+
+
+</html>
