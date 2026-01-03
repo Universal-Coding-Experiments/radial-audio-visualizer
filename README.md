@@ -3,6 +3,13 @@
 A responsive, interactive audio visualizer rendered on HTML5 Canvas.  
 Built with **JavaScript**, **CSS**, and **HTML**, this project transforms audio into a dynamic radial waveform.
 
+---
+
+#### 🔗 Live demo
+https://universal-coding-experiments.github.io/radial-audio-visualizer/
+
+---
+
 ## ✨ Features
 - Upload audio files and visualize in real time
 - Touch gestures: drag to move center, pinch to change density, double‑tap to toggle HUD
