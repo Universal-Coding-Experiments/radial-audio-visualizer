@@ -29,9 +29,6 @@ git clone https://github.com/Universal-Coding-Experiments/radial-audio-visualize
 2. Open `index.html` in your browser  
 3. Upload an audio file and enjoy the visuals  
 
-## 📹 Demo
-Watch the YouTube Shorts demo here: [link]
-
 ## 🛠 Tech Stack
 - HTML5 Canvas
 - CSS3 (responsive HUD & audio controls)
